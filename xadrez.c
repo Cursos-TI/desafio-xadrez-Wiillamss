@@ -7,10 +7,12 @@
 int main()
 {
 
-    int mov_Torre, mov_Bispo, mov_Rainha;
-    char direcao_Torre[30], direcao_Bispo[30], direcao_Rainha[30];
-    int bispo = 0;
-    int rainha = 0;
+    int mov_Torre, mov_Bispo, mov_Rainha, mov_Cavalo;
+    char direcao_Torre[30], direcao_Bispo[30], direcao_Rainha[30], direcao_Cavalo[30], direcao_Cavalo2[30]; // direcao_Cavalo2 anda duas casas e direcao_Cavalo vira a direita ou a esquerda.
+    int bispo = 1;
+    int rainha = 1;
+    int torre;
+    int cavalo = 1;
 
     // Realizando a movimentação da Torre
     printf("Digite um número de 1 à 8, representando a quantidade de casas que a Torre vai percorrer: ");
@@ -20,9 +22,9 @@ int main()
     printf("\n");
 
     printf("** Realizando a movimentação da Torre ***\n");
-    for (int torre = 0; torre < mov_Torre; torre++)
+    for (torre = 1; torre <= mov_Torre; torre++)
     {
-        printf("Se movendo para %s!\n", direcao_Torre);
+        printf("%d casas para %s!\n", torre, direcao_Torre);
     }
     printf("\n");
 
@@ -34,9 +36,9 @@ int main()
     printf("\n");
 
     printf("** Realizando a movimentação do Bispo ***\n");
-    while (bispo < mov_Bispo)
+    while (bispo <= mov_Bispo)
     {
-        printf("Se movendo em %s!\n", direcao_Bispo);
+        printf("%d casas na diagonal %s!\n", bispo, direcao_Bispo);
         bispo++;
     }
     printf("\n");
@@ -51,9 +53,31 @@ int main()
     printf("** Realizando a movimentação da Rainha ***\n");
     do
     {
-        printf("Se movendo em %s!\n", direcao_Rainha);
+        printf("%d casas para %s!\n", rainha, direcao_Rainha);
         rainha++;
-    } while (rainha < mov_Rainha);
+    } while (rainha <= mov_Rainha);
+    printf("\n");
+
+    // Realizando a movimentação do Cavalo
+    printf("Digite o número 2, representando a quantidade de casas que o Cavalo vai percorrer: ");
+    scanf("%d", &mov_Cavalo);
+    printf("Digite a direção que o Cavalo vai realizar na Horizontal ou Vertical: Move-se em L: Ex. (Cima) ou (Esquerda)\n");
+    scanf(" %s", direcao_Cavalo2);
+    printf("Digite a direção que o Cavalo vai realizar para forma o L: para Virar a (Direita) ou (Esquerda)\n");
+    scanf(" %s", direcao_Cavalo);
+    printf("\n");
+
+    printf("** Realizando a movimentação do Cavalo ***\n");
+    for (cavalo = 1; cavalo <= mov_Cavalo; cavalo++)
+    {
+        while (cavalo <= 2)
+        {
+            printf("%d casas para %s\n", cavalo, direcao_Cavalo2);
+            ++cavalo;
+        }
+        printf("%d virar à %s!\n", cavalo, direcao_Cavalo);
+    }
+    printf("\n");
 
     return 0;
 }
