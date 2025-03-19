@@ -56,12 +56,10 @@ int main()
     printf("*** Realizando o movimento do Cavalo ***\n");
     for (int virar_Direcao = 3; virar_Direcao == 3; virar_Direcao--)
     {
-         for (int casas_Cavalo = 1; casas_Cavalo < 3; casas_Cavalo++)
-         {
+        for (int casas_Cavalo = 1; casas_Cavalo < 3; casas_Cavalo++)
+        {
             printf("%d - Cima\n", casas_Cavalo);
-
-         }
-         printf("%d - Direita\n", virar_Direcao);
         }
-
+        printf("%d - Direita\n", virar_Direcao);
     }
+}
